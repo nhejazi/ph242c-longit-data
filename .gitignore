@@ -5,3 +5,5 @@
 *.log
 *.synctex.gz
 *.pdf
+*.blg
+*.bbl

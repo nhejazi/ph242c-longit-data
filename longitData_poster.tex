@@ -26,7 +26,7 @@
 
 \usepackage[svgnames]{xcolor} % Specify colors by their 'svgnames', for a full list of all colors available see here: http://www.latextemplates.com/svgnames-colors
 
-\usepackage{times} % Use the times font
+%\usepackage{times} % Use the times font
 %\usepackage{palatino} % Uncomment to use the Palatino font
 
 \usepackage{graphicx} % Required for including images
@@ -50,7 +50,7 @@
 
 \begin{minipage}[b]{0.55\linewidth}
 \veryHuge \color{NavyBlue} \textbf{Examining Tutoring Efficacy in Primary School} \color{Black}\\ % Title
-\Huge\textit{...Longitudinal Modeling...}\\[1cm] % Subtitle
+\Huge\textit{PH 242C / Stat 247C --- Longitudinal Data Analysis}\\[1cm] % Subtitle
 \huge \textbf{James Mason \& Nima Hejazi}\\ % Author(s)
 \huge University of California, Berkeley\\ % University/organization
 \end{minipage}
@@ -66,17 +66,6 @@
 
 \begin{multicols}{3} % This is how many columns your poster will be broken into, a poster with many figures may benefit from less columns whereas a text-heavy poster benefits from more
 
-%----------------------------------------------------------------------------------------
-%	ABSTRACT
-%----------------------------------------------------------------------------------------
-
-\color{Navy} % Navy color for the abstract
-
-\begin{abstract}
-
-Sed fringilla tempus hendrerit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam ut elit sit amet metus lobortis consequat sit amet in libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel sem magna. Nunc at convallis urna. isus ante. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing. Quisque vestibulum eros eu. Phasellus imperdiet, tortor vitae congue bibendum, felis enim sagittis lorem, et volutpat ante orci sagittis mi. Morbi rutrum laoreet semper. Morbi accumsan enim nec tortor consectetur non commodo nisi sollicitudin.
-
-\end{abstract}
 
 %----------------------------------------------------------------------------------------
 %	INTRODUCTION
@@ -96,23 +85,27 @@ Phasellus imperdiet, tortor vitae congue bibendum, felis enim sagittis lorem, et
 
 \section*{Data and Methodology}
 
-Fusce magna risus, molestie ut porttitor in, consectetur sed mi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque consectetur blandit pellentesque. Sed odio justo, viverra nec porttitor vel, lacinia a nunc. Suspendisse pulvinar euismod arcu, sit amet accumsan enim fermentum quis. In id mauris ut dui feugiat egestas. Vestibulum ac turpis lacinia nisl commodo sagittis eget sit amet sapien. Phasellus imperdiet, tortor vitae congue bibendum, felis enim sagittis lorem, et volutpat ante orci sagittis mi. Morbi rutrum laoreet semper. Morbi accumsan enim nec tortor consectetur non commodo nisi sollicitudin. Proin sollicitudin. Pellentesque eget orci eros. Fusce ultricies, tellus et pellentesque fringilla, ante massa luctus libero, quis tristique purus urna nec nibh. Proin sollicitudin. Pellentesque eget orci eros. Fusce ultricies, tellus et pellentesque fringilla, ante massa luctus libero, quis tristique purus.
+Maybe a few sentences here?
 
 %------------------------------------------------
 
-\subsection*{Exploratory Analysis and Modeling}
+\subsection*{Data}
 
-Nulla vel nisl sed mauris auctor mollis non sed. 
+Purely description...maybe take from Yukie's presentation?
 
-\begin{equation}
-E = mc^{2}
-\label{eqn:Einstein}
-\end{equation}
+\subsection*{Methods - Exploratory Analysis}
 
-Curabitur mi sem, pulvinar quis aliquam rutrum. (1) edf (2)
-, $\Omega=[-1,1]^3$, maecenas leo est, ornare at. $z=-1$ edf $z=1$ sed interdum felis dapibus sem. $x$ set $y$ ytruem. 
-Turpis $j$ amet accumsan enim $y$-lacina; 
-ref $k$-viverra nec porttitor $x$-lacina. 
+No equations here...just talk about OLS and gain models that we tried... 
+
+\subsection*{Methods - Longitudinal Analysis}
+
+Discuss and give equations for the 3 models for which results will be presented.
+
+\begin{enumerate}
+\item Model 1 is "1b" - dynamic gee with exchangeable and robust se
+\item Model 2 is "1d" - dynamic random intercepts with robust se
+\item Model 3 is "3b" - history model with OLS
+\end{enumerate}
 
 Vestibulum ac diam a odio tempus congue. Vivamus id enim nisi:
 
@@ -126,14 +119,21 @@ and
 -\cos\phi_j Q_{j,k,t} + Q_{j,k,y}-\frac{\sin^2\phi_j}{T\cos\phi_j} Q_{j,k}.\label{edgej}
 \end{eqnarray} 
 
-$\mathbf{A}\underline{\xi}=\underline{\beta}$ Vim $\underline{\xi}$ enum nidi $3(P+2)^{2}$ lacina. Id feugain $\mathbf{A}$ nun quis; magno. Fusce convallis rutrum turpis, quis aliquet enim accumsan id. Vestibulum ullamcorper porttitor convallis. Integer sagittis interdum malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed adipiscing tristique orci at ullamcorper.
+Integer sagittis interdum malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed adipiscing tristique orci at ullamcorper.
+
+%----------------------------------------------------------------------------------------
+%	RESEARCH QUESTION 
+%----------------------------------------------------------------------------------------
+\fbox{text}
+\framebox[.3\textwidth][pos]{text}
+
 %----------------------------------------------------------------------------------------
 %	RESULTS 
 %----------------------------------------------------------------------------------------
 
 \section*{Results}
 
-Donec faucibus purus at tortor egestas eu fermentum dolor facilisis. Maecenas tempor dui eu neque fringilla rutrum. Mauris \emph{lobortis} nisl accumsan. Aenean vitae risus ante. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing.
+Explanation of fitting the models presented...
 %
 \begin{center}\vspace{1cm}
 \begin{tabular}{l l l l}
@@ -149,31 +149,16 @@ Treatment 3 & 0.0009271 & 0.296 \\
 \end{center}\vspace{1cm}
 %
 
-Nulla ut porttitor enim. Suspendisse venenatis dui eget eros gravida tempor. Mauris feugiat elit et augue placerat ultrices. Morbi accumsan enim nec tortor consectetur non commodo. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing. Quisque vestibulum eros eu. Phasellus imperdiet, tortor vitae congue bibendum, felis enim sagittis lorem, et volutpat ante orci sagittis mi. Morbi rutrum laoreet semper. Morbi accumsan enim nec tortor consectetur non commodo nisi sollicitudin.
+Interpret coefficients from the model...
+
+Introduce graphic...
 
 \begin{center}\vspace{1cm}
 \includegraphics[width=0.8\linewidth]{placeholder}
 \captionof{figure}{\color{Green} Subject Trajectories}
 \end{center}\vspace{1cm}
 
-In hac habitasse platea dictumst. Etiam placerat, risus ac.
-
-Adipiscing lectus in magna blandit:
-
-\begin{center}\vspace{1cm}
-\begin{tabular}{l l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2} \\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\captionof{table}{\color{Green} Table caption}
-\end{center}\vspace{1cm}
-
-Vivamus sed nibh ac metus tristique tristique a vitae ante. Sed lobortis mi ut arcu fringilla et adipiscing ligula rutrum. Aenean turpis velit, placerat eget tincidunt nec, ornare in nisl. In placerat.
+Explain graphic...
 
 %----------------------------------------------------------------------------------------
 %	CONCLUSIONS
@@ -184,7 +169,6 @@ Vivamus sed nibh ac metus tristique tristique a vitae ante. Sed lobortis mi ut a
 \section*{Conclusions and Further Considerations}
 
 \begin{itemize}
-\item Pellentesque eget orci eros. Fusce ultricies, tellus et pellentesque fringilla, ante massa luctus libero, quis tristique purus urna nec nibh. Phasellus fermentum rutrum elementum. Nam quis justo lectus.
 \item Vestibulum sem ante, hendrerit a gravida ac, blandit quis magna.
 \item Donec sem metus, facilisis at condimentum eget, vehicula ut massa. Morbi consequat, diam sed convallis tincidunt, arcu nunc.
 \item Nunc at convallis urna. isus ante. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing.
