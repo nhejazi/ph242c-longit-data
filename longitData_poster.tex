@@ -126,7 +126,7 @@ The longitudinal outcome measure is the Teacher's College Reading \& Writing Pro
 \mathit{Sem}_{i*}: & \text{ Semesters to date, since enrollment for student } i \\
 \mathit{F}_{i}: & \text{ Dummy for student } i  \text{ being female } \\ 
 \mathit{En}_{i}: & \text{ Dummy for student } i \text{'s home language being English } \\ 
-\mathit{Ed}_{i}: & \text{ Dummy for student } i \text{'s parent having gone to Grad School} \\ 
+\mathit{Ed}_{i}: & \text{ Dummy for student } i \text{'s parent having attended Graduate School} \\ 
 \mathit{D}_{i}: & \text{ Dummy for student } i \text{ being Socioeconomically Disadvantaged } \\ 
 \end{align*}
 
@@ -150,7 +150,7 @@ In order to explore any relationships potentially present in the data, a number 
 \E(\epsilon_{ij} | \matr{X} ) = & ~ 0 \nonumber \qquad
 \mathit{Var}(\epsilon_{ij} | \matr{X} ) = \sigma^2_{\epsilon} \qquad
                     \mathit{Corr}(\epsilon_{ij}, \epsilon_{i'j}) = 0 \qquad
-                    \mathit{Corr}(\epsilon_{ij'}, \epsilon_{ij'}) = \rho \nonumber \\
+                    \mathit{Corr}(\epsilon_{ij}, \epsilon_{ij'}) = \rho \nonumber \\
 \nonumber \\
 \mathit{Post}_{ij} = & ~ \beta_0 + \beta_{0i}
                      + \beta_1 \mathit{Pre}_{ij}
@@ -165,7 +165,7 @@ In order to explore any relationships potentially present in the data, a number 
 \E(\epsilon_{ij} | \matr{X} ) = & ~ 0 \nonumber \qquad
 \mathit{Var}(\epsilon_{ij} | \matr{X} ) = \sigma^2_{\epsilon} \qquad
                     \mathit{Corr}(\epsilon_{ij}, \epsilon_{i'j}) = 0 \qquad
-                    \mathit{Corr}(\epsilon_{ij'}, \epsilon_{ij'}) = 0 \nonumber \\
+                    \mathit{Corr}(\epsilon_{ij}, \epsilon_{ij'}) = 0 \nonumber \\
 \E(\beta_{0i} | \matr{X} ) = & ~ 0 \nonumber \qquad
 \mathit{Var}(\beta_{0i} | \matr{X} ) = \sigma^2_{\beta_0} \qquad
                     \mathit{Corr}(\beta_{0i}, \beta_{0i'}) = 0 \nonumber \\
