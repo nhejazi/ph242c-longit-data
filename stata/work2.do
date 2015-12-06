@@ -191,12 +191,12 @@ esttab model1b model1d history3b using ../results.tex, 			///
 	mtitles("Dynamic (GEE)" "Dynamic (RI)" "Crosssectional")	///
 	note("Robust standard errors in parentheses")				///
 	nobaselevels order(pre baseline treat tot_treat nSemester)	///
-	rename(_cons "(Intercept)")									///
+	rename(_cons "(Intercept)" N_g "Groups")									///
 	varlabels(,blist(0.grade "Grade Level \\ \qquad "			///
 					 1.grade "\qquad " 2.grade "\qquad "		///
 					 4.grade "\qquad " 5.grade "\qquad "))		///
-	refcat(4.grade "\qquad 3")	///
-	wide legend obslast nogaps lines 
+	refcat(4.grade "\qquad 3") wide legend nogaps lines 		///
+	scalars(N N_g) sfmt("%9.0f")
 * alignment
 
 ***
