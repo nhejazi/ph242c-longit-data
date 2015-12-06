@@ -3,6 +3,6 @@
 
 Group Members: Nima Hejazi & James Mason
 
-Project Title: Examining Tutoring Efficacy in Primary School
+Project Title: _Examining Tutoring Efficacy in Primary School_
 
 These are just materials for the poster produced for this data analysis project.
