@@ -7,6 +7,21 @@ clear all
 use estimation_sample, clear
 log using longitudinal2.log, text replace
 
+***
+*** Fix Variable Labels
+***
+label var semester "Semester"
+label var pre "Start-of-Semester Test Score"
+label var treat "Tutoring Sessions per Semester"
+label var tot_treat "Tutoring Sessions Total"
+label var grade "Grade"
+label var post "End-of-Semester Test Score"
+label var female "Female"
+label var english "Native English Speaker"
+label var par_gs "Parent went to Grad School"
+label var sed "Socio-econ Disadvantaged"
+label var baseline "Test Score on Entry"
+label var nSemester "Number of Semesters in School"
 
 ***
 *** Data Exploration
@@ -173,6 +188,7 @@ unique sid if tot_treat > 0
 local num_stu = `r(sum)'
 tempvar grd grd_tag
 gen `grd' = 2*grade + mod(semester-1,2) if grade < . & tot_treat > 0
+label var `grd' "Grade"
 label define `grd' 0 "K" 1 "K" 2 "1" 3 "1"  4 "2"  5 "2" ///
 				 6 "3" 7 "3" 8 "4" 9 "4" 10 "5" 11 "5", replace
 label values `grd' `grd'
@@ -181,8 +197,7 @@ replace `grd' = . if `grd_tag' == 0
 * plot the graph
 xtset sid `grd'
 xtline post if tot_treat > 0, overlay legend(off) 			///
-			ytitle("Post-Test Score") ylabel(-1(1)7) 		///
-			xtitle("Grade")									///
+			ylabel(-1(1)7) 									///
 			xlabel(0(2)11, valuelabel) xticks(1(2)11)		///
 			title("Observed Growth Trajectories")			///
 			subtitle("Fall 2011 - Spring 2015")				///
