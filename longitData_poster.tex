@@ -96,9 +96,24 @@ The data is hierarchical in nature -- that is, there is a nesting structure, wit
 
 The longitudinal outcome measure is the Teacher's College Reading \& Writing Project (TCRWP), which is individually administered to each student. The assessment focuses on reading and retell assessment. Score for each student are transformed via a scaling procedure such that each single point of the examined score approximately represents one year of growth in reading ability. The exam is administered to each student in the Fall, Winter, and Spring terms -- thus, there are three outcome measurements available for each student (though Kindergarteners are not tested in the Fall, thus there are only 2 measurements available for students in this school year). \\
 
-\textbf{Time-varying variables:} (1) Reading assessment scores (3 test administrations / year); Participation in tutoring (student participate per semester basis); Complication: Some students may leave and come back to tutoring, depending partly on how they did on the district?s reading assessment (analogous to Viral Load/CD4 case); Number of tutoring sessions. \\
-
-\textbf{Time-invariant variables:} Gender, Grade level (K-5), School, Ethnicity/Race, Poverty status (socially- and economically-disadvantaged), Special Ed status, English language proficiency, Parent education level, Language spoken at home.
+\begin{align*}
+\text{\textbf{Time-varying}} & \text{ \textbf{variables:}} \\
+\mathit{Post}_{ij}: & \text{ The reading score of student } i \text{ at the end of semester } j \\
+\mathit{Pre}_{ij}: & \text{ The reading score of student } i \text{ at the start of semester } j \\
+\mathit{Tr}_{ij}: & \text{ Number of tutoring sessions for student } i  \text{ in semester } j \\
+\mathit{Grade}_{gij}: & \text{ Dummy for student } i  \text{ being in grade } g \text{ in semester } j \\
+  & ~ g \in \{\mathrm{K}, 1, 2, 4, 5\} \text {, with 3 as reference}  \\
+\\
+\text{\textbf{Time-invariant}} & \text{ \textbf{variables:}} \\
+\mathit{Post}_{i*}: & \text{ The reading score of student } i \text{ on the most recent test } \\
+\mathit{Pre}_{i0}: & \text{ The reading score of student } i \text{ when first enrolled } \\
+\mathit{Tr}_{i*}: & \text{ Total number of tutoring sessions for student } i \\
+\mathit{Sem}_{i*}: & \text{ Semesters to date, since enrollment for student } i \\
+\mathit{Female}_{i}: & \text{ Dummy for student } i  \text{ being female } \\ 
+\mathit{English}_{i}: & \text{ Dummy for student } i \text{'s home language being English } \\ 
+\mathit{Par_GS}_{i}: & \text{ Dummy for student } i \text{'s parent having gone to Grad School} \\ 
+\mathit{SED}_{i}: & \text{ Dummy for student } i \text{ being Socioeconomically Disadvantaged } \\ 
+\end{align*}
 
 \subsection*{Methods - Exploratory Analysis}
 
