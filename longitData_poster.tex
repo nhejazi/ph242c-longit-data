@@ -35,6 +35,7 @@
 \usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
 \usepackage{amsfonts, amsmath, amsthm, amssymb} % For math fonts, symbols and environments
 \usepackage{wrapfig} % Allows wrapping text around tables and figures
+\input{macros.tex}
 
 \begin{document}
 
@@ -123,7 +124,7 @@ No equations here...just talk about OLS and gain models that we tried...
 \subsection*{Methods - Longitudinal Analysis}
 
 \begin{align}
-\mathit{Post}_{ij} = & \beta_0 
+\mathit{Post}_{ij} = & ~ \beta_0 
                      + \beta_1 \mathit{Pre}_{ij}
                      + \beta_2 \mathit{T}_{ij}
                      + \vec\beta_{3} \overrightarrow{\mathit{Gr}}_{ij}
@@ -133,9 +134,12 @@ No equations here...just talk about OLS and gain models that we tried...
                      + \beta_7 \mathit{D}_{i}
                      + \epsilon_{ij}
                      \label{eq:model1} \\
-& \text{describe epsilon distribution} \nonumber \\
-& \text{and covariance structure} \nonumber \\
-\mathit{Post}_{ij} = & \beta_0 + \beta_{0i}
+\E(\epsilon_{ij} | \matr{X} ) = & ~ 0 \nonumber \qquad
+\mathit{Var}(\epsilon_{ij} | \matr{X} ) = \sigma^2_{\epsilon} \qquad
+                    \mathit{Corr}(\epsilon_{ij}, \epsilon_{i'j}) = 0 \qquad
+                    \mathit{Corr}(\epsilon_{ij'}, \epsilon_{ij'}) = \rho \nonumber \\
+\nonumber \\
+\mathit{Post}_{ij} = & ~ \beta_0 + \beta_{0i}
                      + \beta_1 \mathit{Pre}_{ij}
                      + \beta_2 \mathit{T}_{ij}
                      + \vec\beta_{3} \overrightarrow{\mathit{Gr}}_{ij}
@@ -145,10 +149,15 @@ No equations here...just talk about OLS and gain models that we tried...
                      + \beta_7 \mathit{D}_{i}
                      + \epsilon_{ij}
                      \label{eq:model2} \\
-& \text{describe epsilon distribution} \nonumber \\
-& \text{and beta 0i distribution} \nonumber \\
-& \text{and covariance structure} \nonumber \\
-\mathit{Post}_{i*} = & \beta_0
+\E(\epsilon_{ij} | \matr{X} ) = & ~ 0 \nonumber \qquad
+\mathit{Var}(\epsilon_{ij} | \matr{X} ) = \sigma^2_{\epsilon} \qquad
+                    \mathit{Corr}(\epsilon_{ij}, \epsilon_{i'j}) = 0 \qquad
+                    \mathit{Corr}(\epsilon_{ij'}, \epsilon_{ij'}) = 0 \nonumber \\
+\E(\beta_{0i} | \matr{X} ) = & ~ 0 \nonumber \qquad
+\mathit{Var}(\beta_{0i} | \matr{X} ) = \sigma^2_{\beta_0} \qquad
+                    \mathit{Corr}(\beta_{0i}, \beta_{0i'}) = 0 \nonumber \\
+\nonumber \\
+\mathit{Post}_{i*} = & ~ \beta_0
                      + \beta_1 \mathit{Pre}_{i0}
                      + \beta_2 \mathit{T}_{i*}
                      + \beta_3 \mathit{Sem}_{i*}
@@ -156,10 +165,11 @@ No equations here...just talk about OLS and gain models that we tried...
                      + \beta_5 \mathit{En}_{i}
                      + \beta_6 \mathit{Ed}_{i}
                      + \beta_7 \mathit{D}_{i}
-                     + \epsilon_{ij}
+                     + \epsilon_{i}
                      \label{eq:model3} \\
-& \text{describe epsilon distribution} \nonumber \\
-& \text{and covariance structure} \nonumber
+\E(\epsilon_{i} | \matr{X} ) = & ~ 0 \nonumber \qquad
+\mathit{Var}(\epsilon_{i} | \matr{X} ) = \sigma^2_{\epsilon} \qquad
+                    \mathit{Corr}(\epsilon_{i}, \epsilon_{i'}) = 0  \nonumber
 \end{align} 
 
 Model~\ref{eq:model1} is a dynamic model, fit using GEE, with an exchangeable correlation structure.
