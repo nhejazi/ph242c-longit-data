@@ -195,8 +195,8 @@ esttab model1b model1d history3b using ../results.tex, 			///
 	varlabels(,blist(0.grade "Grade Level \\ \qquad "			///
 					 1.grade "\qquad " 2.grade "\qquad "		///
 					 4.grade "\qquad " 5.grade "\qquad "))		///
-	refcat(4.grade 3.grade)	///
-	onecell legend noobs nogaps lines 
+	refcat(4.grade "\qquad 3")	///
+	wide legend noobs nogaps lines 
 * alignment
 
 ***
