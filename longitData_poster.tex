@@ -122,8 +122,6 @@ No equations here...just talk about OLS and gain models that we tried...
 
 \subsection*{Methods - Longitudinal Analysis}
 
-Discuss and give equations for the 3 models for which results will be presented.
-
 \begin{align}
 \mathit{Post}_{ij} = & \beta_0 
                      + \beta_1 \mathit{Pre}_{ij}
@@ -164,21 +162,22 @@ Discuss and give equations for the 3 models for which results will be presented.
 & \text{and covariance structure} \nonumber
 \end{align} 
 
-\begin{enumerate}
-\item \begin{verbatim}
-regress post_n baseline tot_treat nSemester ///
-			 female english par_gs sed ///
- 			 if treatCat == 2 & MISS == 0 & kid_tag, ///
-			 vce(robust)
-est store history3b
-\end{verbatim}
-\end{enumerate}
+Model~\ref{eq:model1} is a dynamic model, fit using GEE, with an exchangeable correlation structure.
+Talk more about the symbols and what they mean.
+Explain the coefficient(s) of interest and the controls.
 
-Now we have Equation~\ref{eq:model1},
-Equation~\ref{eq:model2}, and
-Equation~\ref{eq:model3}.
+Model~\ref{eq:model2} is a dynamic model with a random intercept.
+Talk more about the symbols and what they mean.
+Explain the coefficient(s) of interest and the controls.
+(Need to report the level-2 variance and/or the ICC in the table
+and report discuss it in the results.)
 
-Integer sagittis interdum malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed adipiscing tristique orci at ullamcorper.
+Model~\ref{eq:model3} is a cross-sectional model, where the
+entire history of the student has been collapsed into a
+single observation.  Explain the new covariates.
+Talk more about the symbols and what they mean.
+Explain the coefficient(s) of interest and the controls.
+
 
 %----------------------------------------------------------------------------------------
 %	RESEARCH QUESTION 
