@@ -86,9 +86,9 @@
 
 \section*{Introduction}
 
-BUILD is a tutoring service, offered by CalCorps, that provides after-school 1-to-1 tutoring for struggling readers at 11 elementary schools in the Berkeley Unified School District (BUSD). Teachers and literacy coaches at each school identify those who receive the tutoring based on students' reading ability and availability after school. Tutors, mostly undergraduate students at UC Berkeley, undergo a half-day training by the district literacy coaches prior to tutoring. \\
+BUILD is a tutoring service, offered by CalCorps, that provides after-school 1-to-1 tutoring for students at 11 elementary schools in the Berkeley Unified School District (BUSD). Teachers and literacy coaches at schools identify potential tutees' by reading ability and availability after school. \\
 
-In the year 2014-15, a total of 476 students participated in the BUILD tutoring program. The number of tutoring sessions ranged from 1 to 86, with an average of 15.6. For the evaluation of this program, we have access to the BUSD administrative records, including the district?s reading assessments, given 3 times per year as well as student background information (race/ethnicity, gender, SES, primary language spoken at home) for all K-5 students in Berkeley Unified School District ($N = 4,252$). For a subset of students, the district assessment data and tutoring session information are available for an additional two years (2012-13, 2013-14); the analyses described below are for this subset of students. 
+In the year 2014-15, a total of 476 students participated in the BUILD tutoring program. The number of tutoring sessions ranged from 1 to 86, with an average of 15.6. For the evaluation of this program, we have access to the BUSD administrative records, including the district's reading assessments, given 3 times per year, as well as student background information (race/ethnicity, gender, SES, primary language spoken at home) for all K-5 students in Berkeley Unified School District ($N = 4,252$). The data analyzed is for a subset of students, for which the district assessment data and tutoring session information are available for two more years (2012-13, 2013-14).
 
 %----------------------------------------------------------------------------------------
 %	MATERIALS AND METHODS
@@ -105,7 +105,7 @@ The data is entirely observational. The treatment -- that is, tutoring -- was no
 
 The data is hierarchical in nature -- that is, there is a nesting structure, with schools ($n=11$) being at the highest level, followed by teachers ($n=201$), and then students ($n=4,252$), with the longitudinal outcome being reading measurements (administered 3 times per year to all students). \\
 
-The longitudinal outcome measure is the Teacher's College Reading \& Writing Project (TCRWP), which is individually administered to each student. The assessment focuses on reading and retell assessment. Score for each student are transformed via a scaling procedure such that each single point of the examined score approximately represents one year of growth in reading ability. The exam is administered to each student in the Fall, Winter, and Spring terms -- thus, there are three outcome measurements available for each student (though Kindergarteners are not tested in the Fall, thus there are only 2 measurements available for students in this school year). \\
+The longitudinal outcome measure is the Teacher's College Reading \& Writing Project (TCRWP). Scores for each student are transformed via a scaling procedure such that each single point of the examined score represents one year of growth in reading ability. The exam is administered individually to each student in the Fall, Winter, and Spring terms.
 
 \begin{align*}
 \text{\textbf{Time-varying}} & \text{ \textbf{variables:}} \\
@@ -129,7 +129,7 @@ The longitudinal outcome measure is the Teacher's College Reading \& Writing Pro
 
 \subsection*{Methods - Exploratory Analysis}
 
-No equations here...just talk about OLS and gain models that we tried... 
+In order to explore any relationships potentially present in the data, a number of models -- all making use of simple ordinary least squares (OLS) -- were fit. The full model, with an interaction term for treatment and grade, was fit. This model was compared to a main-terms model lacking the covariate race. As a final step, the simplest model, including only post-exam score and pre-exam score, was fit. A comparison revealed the main-terms model had the lowest AIC, with an $R^{2}$ similar to the most complex model. Thus, terms included in this model were chosen for use in the longitudinal analyses fit to analyze the effect of tutoring on reading ability growth.
 
 \subsection*{Methods - Longitudinal Analysis}
 
@@ -184,7 +184,7 @@ No equations here...just talk about OLS and gain models that we tried...
 
 Model~\ref{eq:model1} is a dynamic model, fit using GEE, with an exchangeable correlation structure.
 Talk more about the symbols and what they mean.
-Explain the coefficient(s) of interest and the controls.
+Explain the coefficient(s) of interest more...
 
 Model~\ref{eq:model2} is a dynamic model with a random intercept.
 Talk more about the symbols and what they mean.
@@ -208,28 +208,25 @@ Explain the coefficient(s) of interest and the controls.
 
 \section*{Results}
 
-Explanation of fitting the models presented...
 %
 \color{Black}
 \begin{center}\vspace{1cm}
 \input{results.tex}
-\captionof{table}{\color{Green} Estimates and Standard Errors}
+\captionof{table}{\color{Green} Estimates, Standard Errors, and Significance for the three longitudinal models examined.}
 \end{center}\vspace{1cm}
 \color{NavyBlue}
 %   
 
-Interpret coefficients from the model...
+In all cases, the longitudinal models fit reveal that the best predictor of post-exam score is the most recent pre-exam score, for a given term. While differences in reading ability were predicted by grade level, this effect is most easily interpreted as differences in reading ability development of children; this is corroborated by the significance of the estimated coefficient for the number of semesters since student enrollment. In regard to our question of interest, it was found that the number of tutoring sessions (and the number of semesters a student received tutoring) had a (slightly) negative effect on student performance, interpreted as falling behind in reading ability. 
 
 \color{NavyBlue}
-
-Introduce graphic...
 
 \begin{center}\vspace{1cm}
 \includegraphics[width=0.8\linewidth]{xtline.pdf}
 \captionof{figure}{\color{Green} Student Growth Trajectories}
-\end{center}\vspace{1cm}
+\end{center}\vspace{0.5cm}
 
-Explain graphic...
+The trajectory plot illustrates the growth of students over time as assessed by the TCRWP scores administered several times per academic year. As expected, the performance of students increases over time, though modeling reveals that tutoring is unlikely to be the cause of this growth.
 
 %----------------------------------------------------------------------------------------
 %	CONCLUSIONS
@@ -240,17 +237,16 @@ Explain graphic...
 \section*{Conclusions and Further Considerations}
 
 \begin{itemize}
-\item Vestibulum sem ante, hendrerit a gravida ac, blandit quis magna.
-\item Donec sem metus, facilisis at condimentum eget, vehicula ut massa. Morbi consequat, diam sed convallis tincidunt, arcu nunc.
-\item Nunc at convallis urna. isus ante. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing.
+\item All of the analyses, including the GEE, random intercept, and cross-sectional history models, show that tutoring is not effective in improving reading scores, while the best predictor of the post-exam score -- in any term -- is the pre-exam score (the score from the previous term).
+\item The observed data structure is quite complicated, as illustrated by the causal DAG below. There are limitations to the methods discussed; in future work, care ought to be taken to account for the causal relationships between the covariates, treatment, and outcome in the investigations.
 \end{itemize}
 
 \color{DarkSlateGray} % Set the color back to DarkSlateGray for the rest of the content
 
 \begin{center}\vspace{1cm}
 \includegraphics[width=0.8\linewidth]{LongitData-DAG.jpg}
-\captionof{figure}{\color{Green} Causal DAG}
-\end{center}\vspace{1cm}
+\captionof{figure}{\color{Green} Descriptive directed acyclic graph (DAG) of the causal relationships present in the observed data structure.}
+\end{center}\vspace{-1cm}
 
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
