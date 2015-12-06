@@ -188,7 +188,7 @@ label var nSemester "\# Semesters Since Enrollment"
 esttab model1b model1d history3b using ../results.tex, 			///
 	replace booktabs											///
 	b("%9.2f") se("%9.2f") star label 							///
-	mtitles("Dynamic (GEE)" "Dynamic (RI)" "Crosssectional")	///
+	mtitles("Dynamic (GEE)" "Dynamic (RI)" "Cross-sectional")	///
 	note("Robust standard errors in parentheses")				///
 	nobaselevels order(pre baseline treat tot_treat nSemester)	///
 	rename(_cons "(Intercept)")									///
