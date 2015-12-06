@@ -196,7 +196,7 @@ esttab model1b model1d history3b using ../results.tex, 			///
 					 1.grade "\qquad " 2.grade "\qquad "		///
 					 4.grade "\qquad " 5.grade "\qquad "))		///
 	refcat(4.grade "\qquad 3")	///
-	wide legend noobs nogaps lines 
+	wide legend obslast nogaps lines 
 * alignment
 
 ***
