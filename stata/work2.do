@@ -11,17 +11,17 @@ log using longitudinal2.log, text replace
 *** Fix Variable Labels
 ***
 label var semester "Semester"
-label var pre "Start-of-Semester Test Score"
-label var treat "Tutoring Sessions per Semester"
-label var tot_treat "Tutoring Sessions Total"
+label var pre "Test Score at Start of Semester"
+label var post "Test Score at End of Semester"
+label var baseline "Test Score at Initial Enrollment"
+label var treat "# Sessions per Semester"
+label var tot_treat "# Sessions Total"
+label var nSemester "# Semesters Since Enrollment"
 label var grade "Grade"
-label var post "End-of-Semester Test Score"
 label var female "Female"
 label var english "Native English Speaker"
-label var par_gs "Parent went to Grad School"
-label var sed "Socio-econ Disadvantaged"
-label var baseline "Test Score on Entry"
-label var nSemester "Number of Semesters in School"
+label var par_gs "Parent Went to Grad School"
+label var sed "Socioeconomically Disadvantaged"
 
 ***
 *** Data Exploration
@@ -178,6 +178,26 @@ est table history*, se p stats(rmse r2 aic bic)
 est table model1b model1d history3b, se
 mat list r(coef)
 log close
+
+*** 
+*** Presentation Tables
+***
+label var treat "\# Sessions per Semester"
+label var tot_treat "\# Sessions Total"
+label var nSemester "\# Semesters Since Enrollment"
+esttab model1b model1d history3b using ../results.tex, 			///
+	replace booktabs											///
+	b("%9.2f") se("%9.2f") star label 							///
+	mtitles("Dynamic (GEE)" "Dynamic (RI)" "Crosssectional")	///
+	note("Robust standard errors in parentheses")				///
+	nobaselevels order(pre baseline treat tot_treat nSemester)	///
+	rename(_cons "(Intercept)")									///
+	varlabels(,blist(0.grade "Grade Level \\ \qquad "			///
+					 1.grade "\qquad " 2.grade "\qquad "		///
+					 4.grade "\qquad " 5.grade "\qquad "))		///
+	refcat(4.grade 3.grade)	///
+	onecell legend noobs nogaps lines 
+* alignment
 
 ***
 *** Graphics

@@ -1,0 +1,28 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{3}{cc}}
+\toprule
+                    &\multicolumn{2}{c}{(1)}           &\multicolumn{2}{c}{(2)}           &\multicolumn{2}{c}{(3)}           \\
+                    &\multicolumn{2}{c}{Dynamic (GEE)} &\multicolumn{2}{c}{Dynamic (RI)}  &\multicolumn{2}{c}{Crosssectional}\\
+\midrule
+Test Score at Start of Semester&        0.89\sym{***}&      (0.03)&        0.87\sym{***}&      (0.04)&                     &            \\
+Test Score at Initial Enrollment&                     &            &                     &            &        0.89\sym{***}&      (0.07)\\
+\# Sessions per Semester&        0.00         &      (0.00)&        0.00         &      (0.00)&                     &            \\
+\# Sessions Total   &                     &            &                     &            &       -0.01\sym{*}  &      (0.00)\\
+\# Semesters Since Enrollment&                     &            &                     &            &        0.55\sym{***}&      (0.03)\\
+Grade Level \\ \qquad K                   &       -0.20\sym{*}  &      (0.10)&       -0.24\sym{*}  &      (0.11)&                     &            \\
+\qquad 1                   &       -0.07         &      (0.06)&       -0.10         &      (0.07)&                     &            \\
+\qquad 2                   &       -0.04         &      (0.03)&       -0.05         &      (0.03)&                     &            \\
+\qquad 3            &        ref.         &            &        ref.         &            &                     &            \\
+\qquad 4                   &        0.12\sym{**} &      (0.04)&        0.12\sym{**} &      (0.04)&                     &            \\
+\qquad 5                   &        0.37\sym{***}&      (0.07)&        0.40\sym{***}&      (0.08)&                     &            \\
+Female              &        0.00         &      (0.02)&        0.00         &      (0.02)&        0.25\sym{*}  &      (0.12)\\
+Native English Speaker&       -0.01         &      (0.02)&       -0.01         &      (0.02)&       -0.04         &      (0.13)\\
+Parent Went to Grad School&        0.05\sym{*}  &      (0.02)&        0.06\sym{*}  &      (0.02)&        0.34\sym{*}  &      (0.16)\\
+Socioeconomically Disadvantaged&       -0.00         &      (0.02)&       -0.00         &      (0.02)&       -0.01         &      (0.16)\\
+(Intercept)         &        0.58\sym{***}&      (0.07)&        0.62\sym{***}&      (0.08)&       -0.20         &      (0.26)\\
+\bottomrule
+\multicolumn{7}{l}{\footnotesize Robust standard errors in parentheses}\\
+\multicolumn{7}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+}
