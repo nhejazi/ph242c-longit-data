@@ -100,19 +100,20 @@ The longitudinal outcome measure is the Teacher's College Reading \& Writing Pro
 \text{\textbf{Time-varying}} & \text{ \textbf{variables:}} \\
 \mathit{Post}_{ij}: & \text{ The reading score of student } i \text{ at the end of semester } j \\
 \mathit{Pre}_{ij}: & \text{ The reading score of student } i \text{ at the start of semester } j \\
-\mathit{Tr}_{ij}: & \text{ Number of tutoring sessions for student } i  \text{ in semester } j \\
-\mathit{Grade}_{gij}: & \text{ Dummy for student } i  \text{ being in grade } g \text{ in semester } j \\
+\mathit{T}_{ij}: & \text{ Number of tutoring sessions for student } i  \text{ in semester } j \\
+\overrightarrow{\mathit{Gr}}_{ij}: & \text{ Vector of dummies for student } i 
+      \text{ being in grade } g \text{ in semester } j \\
   & ~ g \in \{\mathrm{K}, 1, 2, 4, 5\} \text {, with 3 as reference}  \\
 \\
 \text{\textbf{Time-invariant}} & \text{ \textbf{variables:}} \\
 \mathit{Post}_{i*}: & \text{ The reading score of student } i \text{ on the most recent test } \\
 \mathit{Pre}_{i0}: & \text{ The reading score of student } i \text{ when first enrolled } \\
-\mathit{Tr}_{i*}: & \text{ Total number of tutoring sessions for student } i \\
+\mathit{T}_{i*}: & \text{ Total number of tutoring sessions for student } i \\
 \mathit{Sem}_{i*}: & \text{ Semesters to date, since enrollment for student } i \\
-\mathit{Female}_{i}: & \text{ Dummy for student } i  \text{ being female } \\ 
-\mathit{English}_{i}: & \text{ Dummy for student } i \text{'s home language being English } \\ 
-\mathit{Par_GS}_{i}: & \text{ Dummy for student } i \text{'s parent having gone to Grad School} \\ 
-\mathit{SED}_{i}: & \text{ Dummy for student } i \text{ being Socioeconomically Disadvantaged } \\ 
+\mathit{F}_{i}: & \text{ Dummy for student } i  \text{ being female } \\ 
+\mathit{En}_{i}: & \text{ Dummy for student } i \text{'s home language being English } \\ 
+\mathit{Ed}_{i}: & \text{ Dummy for student } i \text{'s parent having gone to Grad School} \\ 
+\mathit{D}_{i}: & \text{ Dummy for student } i \text{ being Socioeconomically Disadvantaged } \\ 
 \end{align*}
 
 \subsection*{Methods - Exploratory Analysis}
@@ -123,21 +124,47 @@ No equations here...just talk about OLS and gain models that we tried...
 
 Discuss and give equations for the 3 models for which results will be presented.
 
+\begin{align}
+\mathit{Post}_{ij} = & \beta_0 
+                     + \beta_1 \mathit{Pre}_{ij}
+                     + \beta_2 \mathit{T}_{ij}
+                     + \vec\beta_{3} \overrightarrow{\mathit{Gr}}_{ij}
+                     + \beta_4 \mathit{F}_{i}
+                     + \beta_5 \mathit{En}_{i}
+                     + \beta_6 \mathit{Ed}_{i}
+                     + \beta_7 \mathit{D}_{i}
+                     + \epsilon_{ij}
+                     \label{eq:model1} \\
+& \text{describe epsilon distribution} \nonumber \\
+& \text{and covariance structure} \nonumber \\
+\mathit{Post}_{ij} = & \beta_0 + \beta_{0i}
+                     + \beta_1 \mathit{Pre}_{ij}
+                     + \beta_2 \mathit{T}_{ij}
+                     + \vec\beta_{3} \overrightarrow{\mathit{Gr}}_{ij}
+                     + \beta_4 \mathit{F}_{i}
+                     + \beta_5 \mathit{En}_{i}
+                     + \beta_6 \mathit{Ed}_{i}
+                     + \beta_7 \mathit{D}_{i}
+                     + \epsilon_{ij}
+                     \label{eq:model2} \\
+& \text{describe epsilon distribution} \nonumber \\
+& \text{and beta 0i distribution} \nonumber \\
+& \text{and covariance structure} \nonumber \\
+\mathit{Post}_{i*} = & \beta_0
+                     + \beta_1 \mathit{Pre}_{i0}
+                     + \beta_2 \mathit{T}_{i*}
+                     + \beta_3 \mathit{Sem}_{i*}
+                     + \beta_4 \mathit{F}_{i}
+                     + \beta_5 \mathit{En}_{i}
+                     + \beta_6 \mathit{Ed}_{i}
+                     + \beta_7 \mathit{D}_{i}
+                     + \epsilon_{ij}
+                     \label{eq:model3} \\
+& \text{describe epsilon distribution} \nonumber \\
+& \text{and covariance structure} \nonumber
+\end{align} 
+
 \begin{enumerate}
-\item \begin{verbatim}
-xtgee post pre c.treat ib3.grade ///
-			 female english par_gs sed ///
-			 if treatCat == 2 & MISS == 0, ///
-			 corr(exch) vce(robust)
-est store model1b
-\end{verbatim}
-\item \begin{verbatim}
-xtreg post pre c.treat ib3.grade ///
-			 female english par_gs sed ///
-			 if treatCat == 2 & MISS == 0, ///
-			 vce(robust)
-est store model1d
-\end{verbatim}
 \item \begin{verbatim}
 regress post_n baseline tot_treat nSemester ///
 			 female english par_gs sed ///
@@ -146,24 +173,6 @@ regress post_n baseline tot_treat nSemester ///
 est store history3b
 \end{verbatim}
 \end{enumerate}
-
-\begin{align}
-\text{some random} & \text{ equation} \label{eq:model1} \\
-& \text{other silliness about this equation} \nonumber \\
-& \text{other silliness about this equation} \nonumber \\
-& \text{other silliness about this equation} \nonumber \\
-& \text{other silliness about this equation} \nonumber \\
-\text{some random} & \text{ equation} \label{eq:model2} \\
-& \text{other silliness about this equation} \nonumber \\
-& \text{other silliness about this equation} \nonumber \\
-& \text{other silliness about this equation} \nonumber \\
-& \text{other silliness about this equation} \nonumber \\
-\text{some random} & \text{ equation} \label{eq:model3} \\
-& \text{other silliness about this equation} \nonumber \\
-& \text{other silliness about this equation} \nonumber \\
-& \text{other silliness about this equation} \nonumber \\
-& \text{other silliness about this equation} \nonumber
-\end{align} 
 
 Now we have Equation~\ref{eq:model1},
 Equation~\ref{eq:model2}, and
