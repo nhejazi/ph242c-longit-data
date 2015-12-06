@@ -164,4 +164,32 @@ est table model1b model1d history3b, se
 mat list r(coef)
 log close
 
-*  xtline post if tot_treat > 0, overlay
+***
+*** Graphics
+***
+* Generage a printable, xtset-able grade+semester variable
+* only for the treated students.
+unique sid if tot_treat > 0
+local num_stu = `r(sum)'
+tempvar grd grd_tag
+gen `grd' = 2*grade + mod(semester-1,2) if grade < . & tot_treat > 0
+label define `grd' 0 "K" 1 "K" 2 "1" 3 "1"  4 "2"  5 "2" ///
+				 6 "3" 7 "3" 8 "4" 9 "4" 10 "5" 11 "5", replace
+label values `grd' `grd'
+egen `grd_tag' = tag(sid `grd')
+replace `grd' = . if `grd_tag' == 0
+* plot the graph
+xtset sid `grd'
+xtline post if tot_treat > 0, overlay legend(off) 			///
+			ytitle("Post-Test Score") ylabel(-1(1)7) 		///
+			xtitle("Grade")									///
+			xlabel(0(2)11, valuelabel) xticks(1(2)11)		///
+			title("Observed Growth Trajectories")			///
+			subtitle("Fall 2011 - Spring 2015")				///
+			ysize(4) xsize(5.5) name(xtline, replace)		///
+			note("Includes `num_stu' students who received any tutoring")
+graph export "../figures/xtline.pdf", as(pdf) replace 		///
+			name(xtline) 
+* restore stuff (tempvars are automatically dropped)
+xtset sid semester
+
