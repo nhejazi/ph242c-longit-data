@@ -7,3 +7,11 @@
 *.pdf
 *.blg
 *.bbl
+*.knit.md
+*.utf8.md
+*_cache/
+*-tikzDictionary
+.RData
+TEMP/
+*.dta
+DATA/
