@@ -36,7 +36,7 @@ xtdescribe
 
 
 ***
-*** Exploratory Modeling
+*** Exploratory Modelifng
 *** (using OLS to figure out which 
 ***  controls to include)
 ***
@@ -196,7 +196,7 @@ esttab model1b model1d history3b using ../results.tex, 			///
 					 1.grade "\qquad " 2.grade "\qquad "		///
 					 4.grade "\qquad " 5.grade "\qquad "))		///
 	refcat(4.grade "\qquad 3") wide legend nogaps lines 		///
-	scalars(N "N_g Groups" "rho $\rho$") 						///
+	scalars(N "N_g Groups" "rho $\rho$ (intraclass correlation)") ///
 	sfmt("%9.0f" "%9.0f" "%9.3f")
 
 ***
