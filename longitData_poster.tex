@@ -226,25 +226,34 @@ reading ability growth.
 \parskip 0.8ex
 
 Model~\ref{eq:model1} is a dynamic model, fit using GEE,
-with an exchangeable correlation structure.
-{\color{Red}%
-Talk more about the symbols and what they mean.
-Explain the coefficient(s) of interest more... }
+with an exchangeable correlation structure and
+robust standard errors.
+In a given semester, the post-test score is regressed
+on the previous test score,
+the number of tutoring sessions in that semester,
+and controls.
+The parameter of interest is $\beta_2$, the
+effect for \textit{one tutoring session},
+for those who attended tutoring regularly.
 
-Model~\ref{eq:model2} is a dynamic model with a random intercept.
-{\color{Red}%
-Talk more about the symbols and what they mean.
-Explain the coefficient(s) of interest and the controls.
-(Need to report the level-2 variance and/or the ICC in the table
-and report discuss it in the results.) }
+Model~\ref{eq:model2} is a dynamic model with a random intercept,
+and robust standard errors, using the same
+fixed effects as Model~1.
+The parameter of interest is $\beta_2$, the
+within-student effect of \textit{one tutoring session},
+among those who attended tutoring regularly.
 
 Model~\ref{eq:model3} is a cross-sectional model, where the
-entire history of the student has been collapsed into a
-single observation. 
-{\color{Red}%
-Explain the new covariates.
-Talk more about the symbols and what they mean.
-Explain the coefficient(s) of interest and the controls. }
+entire history of each student has been collapsed into a
+single observation.
+The most recent post-test score is regressed on
+the first pre-test score we have for that student,
+the number of semesters since the first test,
+the total number of tutoring sessions (during regular attendance),
+and controls.
+The parameter of interest is $\beta_2$, the
+within-student effect of \textit{one tutoring session},
+over their academic history.
 
 
 
