@@ -118,26 +118,26 @@ for two more years (2012-13, 2013-14).
 
 \subsection*{Data}
 
-The data is entirely observational.
-The treatment -- that is, tutoring -- was not randomly assigned,
-as a number of factors impacted whether students were able
+The data are entirely observational.
+The treatment -- tutoring -- was not randomly assigned,
+and a number of factors impacted whether students were able
 to participate in the program.
 
-The data is hierarchical in nature -- that is, there is a
-nesting structure, with schools ($n=11$) being at the highest level,
-followed by teachers ($n=201$), and then students ($n=4,252$),
-with the longitudinal outcome being reading measurements
-(administered 3 times per year to all students).
+The data are hierarchical in nature:
+measurement occasions (3 per year) are nested
+within students ($n=4,252$),
+within teachers ($n=201$), 
+within schools ($n=11$).
 
 The longitudinal outcome measure is the
 Teacher's College Reading \& Writing Project (TCRWP).
 Scores for each student are transformed via a scaling procedure
-such that each single point of the examined score represents
+such that each score point represents
 one year of growth in reading ability.
-The test is administered individually to each student
-in the Fall, Winter, and Spring terms.
-
+The test was administered individually to each student
+in the Fall, Winter, and Spring.
 \parskip 0.0ex
+
 \begin{align*}
 \text{\textbf{Time-varying}} & \text{ \textbf{variables:}} \\
 \mathit{Post}_{ij}: & \text{ The reading score of student } i \text{ at the end of semester } j \\
@@ -163,16 +163,16 @@ in the Fall, Winter, and Spring terms.
 In order to explore any relationships potentially present
 in the data, a number of exploratory models were fit,
 all using ordinary least squares (OLS).
-The full model, with an interaction term for treatment and grade,
-was fit first. This model was compared to a main-effects model
+The full model, with an interaction terms between treatment and grade,
+was fit first.
+This model was compared to a main-effects model
 lacking the covariate race.
 As a final step, the simplest model, including only
 post-test score and pre-test score, was fit.
 A comparison revealed the main-effects model had the lowest AIC,
 with an $R^{2}$ similar to that of the most complex model.
-Thus, terms included in this model were chosen for use in the
-longitudinal analyses to analyze the effect of tutoring on
-reading ability growth.
+Thus, the terms included in this model were selected for the
+longitudinal analyses that follow.
 
 \parskip 0.0ex
 \subsection*{Methods - Longitudinal Analysis}
@@ -272,18 +272,15 @@ over their academic history.
 \end{center}\vspace{0.5cm}
 \color{NavyBlue}
 %   
-In all cases, the longitudinal models fit reveal that
+In all models, results indicate that
 the best predictor of post-test score is the most recent
 pre-test score.
-While differences in reading ability (controlling for pre-test)
-were predicted by grade level, this effect is most easily
-interpreted as differences in reading ability development
-of children; this is corroborated by the significance of the
-estimated coefficient for the number of semesters since
-student enrollment.
+Differences in reading ability (controlling for pre-test)
+were predicted by grade level, this is
+interpreted as differences in average reading growth
+by grade.
 In regard to our question of interest, it was found that the
 number of tutoring sessions
-(and the number of semesters a student received tutoring)
 had a (slightly) negative effect on student performance, 
 interpreted as falling behind in reading ability. 
 
