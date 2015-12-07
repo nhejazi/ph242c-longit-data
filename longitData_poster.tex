@@ -36,7 +36,6 @@
 \usepackage{amsfonts, amsmath, amsthm, amssymb} % For math fonts, symbols and environments
 \usepackage{wrapfig} % Allows wrapping text around tables and figures
 \input{macros.tex}
-
 \begin{document}
 
 %----------------------------------------------------------------------------------------
@@ -89,9 +88,24 @@
 
 \section*{Introduction}
 
-BUILD is a tutoring service, offered by CalCorps, that provides after-school 1-to-1 tutoring for students at 11 elementary schools in the Berkeley Unified School District (BUSD). Teachers and literacy coaches at schools identify potential tutees' by reading ability and availability after school. \\
+\parskip 0.8ex
+BUILD is a tutoring service, offered by CalCorps, that provides
+after-school 1-to-1 tutoring for students at 11 elementary schools
+in the Berkeley Unified School District (BUSD).
+Teachers and literacy coaches at schools identify potential tutees'
+by reading ability and availability after school.
 
-In the year 2014-15, a total of 476 students participated in the BUILD tutoring program. The number of tutoring sessions ranged from 1 to 86, with an average of 15.6. For the evaluation of this program, we have access to the BUSD administrative records, including the district's reading assessments, given 3 times per year, as well as student background information (race/ethnicity, gender, SES, primary language spoken at home) for all K-5 students in Berkeley Unified School District ($N = 4,252$). The data analyzed is for a subset of students, for which the district assessment data and tutoring session information are available for two more years (2012-13, 2013-14).
+In the year 2014-15, a total of 476 students participated in the
+BUILD tutoring program. The number of tutoring sessions ranged
+from 1 to 86, with an average of 15.6.
+For the evaluation of this program, we have access to the BUSD
+administrative records, including the district's reading assessments,
+given 3 times per year, as well as student background information
+(race/ethnicity, gender, SES, primary language spoken at home)
+for all K-5 students in Berkeley Unified School District ($N = 4,252$).
+The data analyzed is for a subset of students, for which the district
+assessment data and tutoring session information are available
+for two more years (2012-13, 2013-14).
 
 %----------------------------------------------------------------------------------------
 %	MATERIALS AND METHODS
@@ -104,12 +118,26 @@ In the year 2014-15, a total of 476 students participated in the BUILD tutoring 
 
 \subsection*{Data}
 
-The data is entirely observational. The treatment -- that is, tutoring -- was not randomly assigned, as a number of factors impacted whether students were able to participate in the program. \\
+The data is entirely observational.
+The treatment -- that is, tutoring -- was not randomly assigned,
+as a number of factors impacted whether students were able
+to participate in the program.
 
-The data is hierarchical in nature -- that is, there is a nesting structure, with schools ($n=11$) being at the highest level, followed by teachers ($n=201$), and then students ($n=4,252$), with the longitudinal outcome being reading measurements (administered 3 times per year to all students). \\
+The data is hierarchical in nature -- that is, there is a
+nesting structure, with schools ($n=11$) being at the highest level,
+followed by teachers ($n=201$), and then students ($n=4,252$),
+with the longitudinal outcome being reading measurements
+(administered 3 times per year to all students).
 
-The longitudinal outcome measure is the Teacher's College Reading \& Writing Project (TCRWP). Scores for each student are transformed via a scaling procedure such that each single point of the examined score represents one year of growth in reading ability. The exam is administered individually to each student in the Fall, Winter, and Spring terms.
+The longitudinal outcome measure is the
+Teacher's College Reading \& Writing Project (TCRWP).
+Scores for each student are transformed via a scaling procedure
+such that each single point of the examined score represents
+one year of growth in reading ability.
+The exam is administered individually to each student
+in the Fall, Winter, and Spring terms.
 
+\parskip 0.0ex
 \begin{align*}
 \text{\textbf{Time-varying}} & \text{ \textbf{variables:}} \\
 \mathit{Post}_{ij}: & \text{ The reading score of student } i \text{ at the end of semester } j \\
@@ -117,8 +145,7 @@ The longitudinal outcome measure is the Teacher's College Reading \& Writing Pro
 \mathit{T}_{ij}: & \text{ Number of tutoring sessions for student } i  \text{ in semester } j \\
 \overrightarrow{\mathit{Gr}}_{ij}: & \text{ Vector of dummies for student } i 
       \text{ being in grade } g \text{ in semester } j \\
-  & ~ g \in \{\mathrm{K}, 1, 2, 4, 5\} \text {, with 3 as reference}  \\
-\\
+  & ~ g \in \{\mathrm{K}, 1, 2, 4, 5\} \text {, with 3 as reference}  \\[1.5ex]
 \text{\textbf{Time-invariant}} & \text{ \textbf{variables:}} \\
 \mathit{Post}_{i*}: & \text{ The reading score of student } i \text{ on the most recent test } \\
 \mathit{Pre}_{i0}: & \text{ The reading score of student } i \text{ when first enrolled } \\
@@ -129,11 +156,25 @@ The longitudinal outcome measure is the Teacher's College Reading \& Writing Pro
 \mathit{Ed}_{i}: & \text{ Dummy for student } i \text{'s parent having attended Graduate School} \\ 
 \mathit{D}_{i}: & \text{ Dummy for student } i \text{ being Socioeconomically Disadvantaged } \\ 
 \end{align*}
+\parskip 0.8ex
 
 \subsection*{Methods - Exploratory Analysis}
 
-In order to explore any relationships potentially present in the data, a number of models -- all making use of simple ordinary least squares (OLS) -- were fit. The full model, with an interaction term for treatment and grade, was fit. This model was compared to a main-terms model lacking the covariate race. As a final step, the simplest model, including only post-exam score and pre-exam score, was fit. A comparison revealed the main-terms model had the lowest AIC, with an $R^{2}$ similar to the most complex model. Thus, terms included in this model were chosen for use in the longitudinal analyses fit to analyze the effect of tutoring on reading ability growth.
+In order to explore any relationships potentially present
+in the data, a number of exploratory models were fit,
+all using ordinary least squares (OLS).
+The full model, with an interaction term for treatment and grade,
+was fit first. This model was compared to a main-effects model
+lacking the covariate race.
+As a final step, the simplest model, including only
+post-test score and pre-exam score, was fit.
+A comparison revealed the main-effects model had the lowest AIC,
+with an $R^{2}$ similar to that of the most complex model.
+Thus, terms included in this model were chosen for use in the
+longitudinal analyses to analyze the effect of tutoring on
+reading ability growth.
 
+\parskip 0.0ex
 \subsection*{Methods - Longitudinal Analysis}
 
 \begin{align}
@@ -149,9 +190,8 @@ In order to explore any relationships potentially present in the data, a number 
                      \label{eq:model1} \\
 \E(\epsilon_{ij} | \matr{X} ) = & ~ 0 \nonumber \qquad
 \mathit{Var}(\epsilon_{ij} | \matr{X} ) = \sigma^2_{\epsilon} \qquad
-                    \mathit{Corr}(\epsilon_{ij}, \epsilon_{i'j}) = 0 \qquad
-                    \mathit{Corr}(\epsilon_{ij}, \epsilon_{ij'}) = \rho \nonumber \\
-\nonumber \\
+                    \mathit{Cor}(\epsilon_{ij}, \epsilon_{i'j}) = 0 \qquad
+                    \mathit{Cor}(\epsilon_{ij}, \epsilon_{ij'}) = \rho \nonumber \\[1.5ex]
 \mathit{Post}_{ij} = & ~ \beta_0 + \beta_{0i}
                      + \beta_1 \mathit{Pre}_{ij}
                      + \beta_2 \mathit{T}_{ij}
@@ -164,12 +204,11 @@ In order to explore any relationships potentially present in the data, a number 
                      \label{eq:model2} \\
 \E(\epsilon_{ij} | \matr{X} ) = & ~ 0 \nonumber \qquad
 \mathit{Var}(\epsilon_{ij} | \matr{X} ) = \sigma^2_{\epsilon} \qquad
-                    \mathit{Corr}(\epsilon_{ij}, \epsilon_{i'j}) = 0 \qquad
-                    \mathit{Corr}(\epsilon_{ij}, \epsilon_{ij'}) = 0 \nonumber \\
+                    \mathit{Cor}(\epsilon_{ij}, \epsilon_{i'j}) = 0 \qquad
+                    \mathit{Cor}(\epsilon_{ij}, \epsilon_{ij'}) = 0 \nonumber \\
 \E(\beta_{0i} | \matr{X} ) = & ~ 0 \nonumber \qquad
 \mathit{Var}(\beta_{0i} | \matr{X} ) = \sigma^2_{\beta_0} \qquad
-                    \mathit{Corr}(\beta_{0i}, \beta_{0i'}) = 0 \nonumber \\
-\nonumber \\
+                    \mathit{Cor}(\beta_{0i}, \beta_{0i'}) = 0 \nonumber \\[1.5ex]
 \mathit{Post}_{i*} = & ~ \beta_0
                      + \beta_1 \mathit{Pre}_{i0}
                      + \beta_2 \mathit{T}_{i*}
@@ -182,24 +221,30 @@ In order to explore any relationships potentially present in the data, a number 
                      \label{eq:model3} \\
 \E(\epsilon_{i} | \matr{X} ) = & ~ 0 \nonumber \qquad
 \mathit{Var}(\epsilon_{i} | \matr{X} ) = \sigma^2_{\epsilon} \qquad
-                    \mathit{Corr}(\epsilon_{i}, \epsilon_{i'}) = 0  \nonumber
+                    \mathit{Cor}(\epsilon_{i}, \epsilon_{i'}) = 0  \nonumber
 \end{align} 
+\parskip 0.8ex
 
-Model~\ref{eq:model1} is a dynamic model, fit using GEE, with an exchangeable correlation structure.
+Model~\ref{eq:model1} is a dynamic model, fit using GEE,
+with an exchangeable correlation structure.
+{\color{Red}%
 Talk more about the symbols and what they mean.
-Explain the coefficient(s) of interest more...
+Explain the coefficient(s) of interest more... }
 
 Model~\ref{eq:model2} is a dynamic model with a random intercept.
+{\color{Red}%
 Talk more about the symbols and what they mean.
 Explain the coefficient(s) of interest and the controls.
 (Need to report the level-2 variance and/or the ICC in the table
-and report discuss it in the results.)
+and report discuss it in the results.) }
 
 Model~\ref{eq:model3} is a cross-sectional model, where the
 entire history of the student has been collapsed into a
-single observation.  Explain the new covariates.
+single observation. 
+{\color{Red}%
+Explain the new covariates.
 Talk more about the symbols and what they mean.
-Explain the coefficient(s) of interest and the controls.
+Explain the coefficient(s) of interest and the controls. }
 
 
 
@@ -208,9 +253,8 @@ Explain the coefficient(s) of interest and the controls.
 %----------------------------------------------------------------------------------------
 
 \color{NavyBlue}
-
+\parskip 0.0ex
 \section*{Results}
-
 %
 \color{Black}
 \begin{center}\vspace{1cm}
@@ -219,8 +263,20 @@ Explain the coefficient(s) of interest and the controls.
 \end{center}\vspace{0.5cm}
 \color{NavyBlue}
 %   
-
-In all cases, the longitudinal models fit reveal that the best predictor of post-exam score is the most recent pre-exam score, for a given term. While differences in reading ability were predicted by grade level, this effect is most easily interpreted as differences in reading ability development of children; this is corroborated by the significance of the estimated coefficient for the number of semesters since student enrollment. In regard to our question of interest, it was found that the number of tutoring sessions (and the number of semesters a student received tutoring) had a (slightly) negative effect on student performance, interpreted as falling behind in reading ability. 
+In all cases, the longitudinal models fit reveal that
+the best predictor of post-test score is the most recent
+pre-test score.
+While differences in reading ability (controlling for pre-test)
+were predicted by grade level, this effect is most easily
+interpreted as differences in reading ability development
+of children; this is corroborated by the significance of the
+estimated coefficient for the number of semesters since
+student enrollment.
+In regard to our question of interest, it was found that the
+number of tutoring sessions
+(and the number of semesters a student received tutoring)
+had a (slightly) negative effect on student performance, 
+nterpreted as falling behind in reading ability. 
 
 \color{NavyBlue}
 
@@ -229,7 +285,12 @@ In all cases, the longitudinal models fit reveal that the best predictor of post
 \captionof{figure}{\color{Green} Student Growth Trajectories}
 \end{center}\vspace{0.5cm}
 
-The trajectory plot illustrates the growth of students over time as assessed by the TCRWP scores administered several times per academic year. As expected, the performance of students increases over time, though modeling reveals that tutoring is unlikely to be the cause of this growth.
+The trajectory plot illustrates the growth of students over
+time as assessed by the TCRWP scores administered several
+times per academic year.
+As expected, the performance of students increases over time,
+though modeling reveals that tutoring is unlikely to be the
+cause of this growth.
 
 %----------------------------------------------------------------------------------------
 %	CONCLUSIONS
@@ -240,8 +301,20 @@ The trajectory plot illustrates the growth of students over time as assessed by 
 \section*{Conclusions and Further Considerations}
 
 \begin{itemize}
-\item All of the analyses, including the GEE, random intercept, and cross-sectional history models, show that tutoring is not effective in improving reading scores, while the best predictor of the post-exam score -- in any term -- is the pre-exam score (the score from the previous term).
-\item The observed data structure is quite complicated, as illustrated by the causal DAG below. There are limitations to the methods discussed; in future work, care ought to be taken to account for the causal relationships between the covariates, treatment, and outcome in the investigations.
+\setlength\itemsep{0.5ex}
+\item All of the analyses, including the GEE, random intercept,
+and cross-sectional history models, show that tutoring
+was not effective in improving reading scores,
+while the best predictor of the post-test score
+-- in any term -- was the pre-test score
+(the score from the previous term).
+\item The observed data structure is quite complicated,
+as illustrated by the causal DAG below.
+There are limitations to the methods discussed;
+in future work, care ought to be taken to account for the
+causal relationships between the covariates, treatment,
+and outcome in the investigations -- in particular,
+time-varying confounding is clearly present.
 \end{itemize}
 
 \color{DarkSlateGray} % Set the color back to DarkSlateGray for the rest of the content
